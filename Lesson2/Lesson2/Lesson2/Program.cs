@@ -23,25 +23,11 @@ namespace Lesson2
 
         }
 
-        public Node ProgramInput()
+        public static Node ProgramInput()
         {
-            Console.WriteLine("Если хотите добавить экземпляр в массив? Y/N");
-            Char n = Convert.ToChar(Console.ReadKey());
-
-
-            if (n =='Y' || n == 'y')
-            {
-                Console.WriteLine("введите значение Нода");
-                return new Node();
-            }
-            if (n == 'N' || n == 'n')
-            {
-                return;
-            }
-            else
-            {
-                Console.WriteLine("Повторите попытку ввода");
-            }
+            Console.WriteLine("Введите значение экземпляра");
+            int Input = Convert.ToInt32(Console.ReadLine());
+            return new Node(Input);
         }
 
     }
