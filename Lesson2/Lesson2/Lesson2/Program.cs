@@ -5,29 +5,35 @@ namespace Lesson2
 {
     class Program
     {
-        static void Main()
+        static object Main()
         {
-
             List<Node> ArrayNode = new List<Node>();
-            bool ProgramStart = true;
 
-            while(ProgramStart)
+            do
             {
-
-                ArrayNode.Add(ProgramInput());
-                if (true)
+                if (ArrayNode.Count == 0)
                 {
+                    Console.WriteLine("Введите значение экземпляра");
+                    int Input = Convert.ToInt32(Console.ReadLine());
+                    ArrayNode.Add(new Node(Input));
 
+                    ArrayNode[0].PrevNode = null;
+                    ArrayNode[0].NextNode = null;
                 }
-            }
 
+
+            } while (true);
         }
 
-        public static Node ProgramInput()
+
+
+        public static void NodeAdd(ref List<Node> array)
         {
             Console.WriteLine("Введите значение экземпляра");
             int Input = Convert.ToInt32(Console.ReadLine());
-            return new Node(Input);
+            array.Add(new Node(Input));
+
+
         }
 
     }
