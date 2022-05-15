@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 namespace Lesson2
 {
     public class Node : ILinkedList
@@ -7,34 +7,26 @@ namespace Lesson2
         public Node NextNode { get; set; }
         public Node PrevNode { get; set; }
 
-        public Node(int Input)
+        public Node(int value)
         {
-            Value = Input;
+            Value = value;
         }
+
+        public Node() { }
 
         public int GetCount()
         {
-            throw new NotImplementedException();
-        }
+            int SearchIndex = 1;
+            Node FNode = NextNode;
 
-        public void AddNode(int value)
-        {
-            throw new NotImplementedException();
-        }
+            while (NextNode != null)
+            {
+                FNode = NextNode;
+                SearchIndex++;
+            }
 
-        public void AddNodeAfter(Node node, int value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveNode(Node node)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Node FindNode(int searchValue)
-        {
-            throw new NotImplementedException();
+            FNode = null;
+            return SearchIndex;
         }
     }
 }
